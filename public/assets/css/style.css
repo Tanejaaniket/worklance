@@ -1,0 +1,268 @@
+.custom-btn {
+  background-color: #92d35e !important;
+  color: white !important;
+}
+.footer-img {
+  width: 40px;
+}
+.header-company-logo {
+  width: 100px;
+}
+.custom-txt {
+  color: #92d35e !important;
+}
+.find-project {
+  padding: 200px 0px;
+  background-image: url("../img/map.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.search-icon {
+  width: 25px;
+  z-index: 2;
+}
+.intro-search-bar:focus {
+  outline: none;
+}
+
+.intro {
+  background-image: url("../img/hader-bg.png");
+  background-color: #f1f7eb;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  padding: 50px 0px 100px 0px;
+}
+.technology-card img {
+  height: 100px;
+  width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+.technology-card {
+  width: 90%;
+}
+.technology-card:hover {
+  color: #92d35e;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.carousel a img {
+  background-color: #92d35e !important;
+  width: 20px;
+}
+.carousel a {
+  background-color: #92d35e !important;
+  opacity: 1;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin: auto 30px;
+}
+.service-img {
+  width: 80px;
+  height: 100px;
+}
+
+.heading {
+  font-size: 50px !important;
+  font-weight: 700;
+}
+.auth-page {
+  background-color: #f1f7eb;
+  height: 100vh;
+  width: 100 vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (max-width: 550px) {
+  .about-text {
+    font-size: 18px !important;
+  }
+  .heading {
+    font-size: 40px !important;
+  }
+}
+.description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.description-container {
+  height: 100vh;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.project-description-link:hover {
+  text-decoration: none;
+  color: #92d35e;
+  cursor: pointer;
+}
+
+.description-heading {
+  margin: 30px auto;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 50vw;
+  background-color: rgba(255, 255, 255, 0.73);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+}
+@media screen and (max-width: 935px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 0.73);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+  }
+}
+.profile-img {
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+}
+@media screen and (max-width: 991px) {
+  .profile-img {
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+  }
+  .logout-btn {
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 341px) {
+  .profile-img {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+.profile-input {
+  background-color: transparent !important;
+  border: none !important;
+}
+.profile-strip-color {
+  background-color: #f1f7eb;
+}
+.admin-dashboard {
+  background-color: #f1f7eb;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 20vw;
+  height: 100vh;
+  font-size: 20px;
+  flex-direction: column;
+}
+.admin-dashboard ul li {
+  list-style-type: none;
+  padding-top: 15px;
+}
+.dashboard-logout-btn {
+  list-style-type: none;
+  position: absolute;
+  bottom: 2vh;
+}
+@media screen and (max-width: 1000px) {
+  .admin-dashboard {
+    background-color: #f1f7eb;
+    width: 50px;
+    height: 100vh;
+    font-size: 20px;
+    content-visibility: hidden;
+  }
+}
+.admin-dashboard-cards {
+  background-color: #f1f7eb !important;
+}
+.admin-custom-txt {
+  color: #0b5ed7 !important;
+}
+.dashboard-icon {
+  padding: 16px 22px;
+  border-radius: 50%;
+}
+.recent-project-icon {
+  padding: 10px 14px;
+}
+.dash-enquiry-box {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  max-height: 30px;
+}
+.cursor-pointer:hover {
+  cursor: pointer;
+}
+.dashboard-card {
+  height: 460px !important;
+}
+.project-completed {
+  background-color: #cbf7c4 !important;
+}
+.project-pending {
+  background-color: #ffebdc !important;
+}
+.modal-para {
+  word-spacing: 10px;
+  line-height: 1.5;
+}
+.error-page {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("/assets/img/pagenotfound.jpg");
+  background-size: 100vh auto;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+.error-page h1 {
+  padding-top: 10vh;
+  font-size: 50px;
+  text-align: center;
+}
+.error-page p {
+  font-size: 30px;
+  text-align: center;
+}
+@media screen and (max-width: 620px) {
+  .error-page {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("/assets/img/pagenotfound.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+.user-profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.edit-project-modal-img {
+  height: 100px;
+  width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+.admin-action-dropdown::after {
+  display: none !important;
+}
