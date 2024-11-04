@@ -1,16 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Project from "../layout/Projects";
 import Technologies from "../layout/Technologies";
 import { addDoc, collection, Timestamp } from "firebase/firestore";
 import { db } from "../../Firebase";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [load,setLoad] = useState(true);
-  setTimeout(()=>{setLoad(false)},1000)
+  useEffect(()=>{
+    setTimeout(()=>{setLoad(false)},1000)
+  },[])
   if(load){
     return <Spinner style={{display:"block",margin:"35vh auto", height:"10vh",width:"10vh",borderColor:"#92d35e",borderRightColor:"transparent"}}/>
   }

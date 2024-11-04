@@ -9,10 +9,10 @@ import {
 } from "firebase/firestore";
 import Project from "./Projects";
 
-
 export default function Technologies() {
   const [technology, setTechnology] = useState([]);
   const [techs, setTech] = useState("");
+  const windowSize = window.innerWidth;
   let tempArray = [];
   let finalArray = [];
   useEffect(() => {
@@ -26,23 +26,20 @@ export default function Technologies() {
       });
       setTechnology(fetchedData);
       console.log(fetchedData);
-      
     });
   }, []);
-  for (let i = 0; i < technology.length; i++) {
+  for (let i = 0; i < technology.length; ) {
     tempArray = [technology[i]];
-    i++
-    while(i%4!==0 && technology[i] !== undefined){
+    i++;
+    while (i % 4 !== 0 && technology[i] !== undefined && windowSize > 770) {
       tempArray.push(technology[i]);
       i++;
     }
     finalArray.push(tempArray);
-    console.log("final array",finalArray);
-    
+    console.log("final array", finalArray);
   }
   return (
     <>
-
       <div
         className="container-fluid text-center carousel slide"
         id="carouselExample"
@@ -54,20 +51,25 @@ export default function Technologies() {
                 <div className="carousel-item active" key={index}>
                   <div className="row">
                     {subArray.map((tech, index) => {
-                        return (
-                          <div className="col-md-3 my-5" key={tech.id}>
-                            <div className="card py-3 technology-card mx-auto"  onClick={()=>{
-                            setTech(tech.data.technologyName)    
-                          }}>
-                              <img
-                                src={tech.data.technologyIcon}
-                                className="card-img-top my-4 "
-                                alt=""
-                              />
-                              <h3 className="card-title mt-4">{tech.data.technologyName}</h3>
-                            </div>
+                      return (
+                        <div className="col-md-3 my-5" key={tech.id}>
+                          <div
+                            className="card py-3 technology-card mx-auto"
+                            onClick={() => {
+                              setTech(tech.data.technologyName);
+                            }}
+                          >
+                            <img
+                              src={tech.data.technologyIcon}
+                              className="card-img-top my-4 "
+                              alt=""
+                            />
+                            <h3 className="card-title mt-4">
+                              {tech.data.technologyName}
+                            </h3>
                           </div>
-                        );
+                        </div>
+                      );
                     })}
                   </div>
                 </div>
@@ -76,19 +78,24 @@ export default function Technologies() {
               return (
                 <div className="carousel-item" key={index}>
                   <div className="row">
-                  {subArray.map((tech, index) => {
-                      if(tech!=undefined){
+                    {subArray.map((tech, index) => {
+                      if (tech != undefined) {
                         return (
                           <div className="col-md-3 my-5" key={tech.id}>
-                            <div className="card py-3 technology-card mx-auto"  onClick={()=>{
-                            setTech(tech.data.technologyName)    
-                          }}>
+                            <div
+                              className="card py-3 technology-card mx-auto"
+                              onClick={() => {
+                                setTech(tech.data.technologyName);
+                              }}
+                            >
                               <img
                                 src={tech.data.technologyIcon}
                                 className="card-img-top my-4 "
                                 alt=""
                               />
-                              <h3 className="card-title mt-4">{tech.data.technologyName}</h3>
+                              <h3 className="card-title mt-4">
+                                {tech.data.technologyName}
+                              </h3>
                             </div>
                           </div>
                         );
@@ -99,8 +106,9 @@ export default function Technologies() {
               );
             }
           })}
+          
         </div>
-        <div className="container">
+        <div className={windowSize < 770 ? "d-none" : "container"}>
           <a
             className="carousel-control-prev"
             type="button"
@@ -119,16 +127,21 @@ export default function Technologies() {
           </a>
         </div>
       </div>
-      {
-        techs?(
-          <>
+      {techs ? (
+        <>
           <div className="text-end">
-            <i className="bi bi-x fs-2" onClick={()=>{setTech("")}}></i>
+            <i
+              className="bi bi-x fs-2"
+              onClick={() => {
+                setTech("");
+              }}
+            ></i>
           </div>
-          <Project tech={techs}/>
-          </>
-        ):("")
-      }
+          <Project tech={techs} />
+        </>
+      ) : (
+        ""
+      )}
     </>
   );
 }

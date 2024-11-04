@@ -19,7 +19,7 @@ export default function ManageTechnology() {
   const [load,setLoad] = useState(true);
   useEffect(() => {
     try{
-      const q = query(collection(db, "technology"), orderBy("createdAt", "desc"));
+      const q = query(collection(db, "technology"), orderBy("status", "desc"));
     onSnapshot(q, (dataObj) => {
       const fetchedData = dataObj.docs.map((el) => {
         return {

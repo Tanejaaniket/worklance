@@ -15,7 +15,6 @@ export default function Project({ tech, searchQuery, setSearchQuery }) {
   const [project, setProject] = useState([]);
   const [sidebar, setSidebar] = useState(-1);
   const [searchProject, setSearchProject] = useState([]);
-  const [emptyData,setEmptyData] = useState(false)
 
   useEffect(() => {
     let q;
@@ -36,7 +35,6 @@ export default function Project({ tech, searchQuery, setSearchQuery }) {
         };
       });
       setProject(fetchedData);
-      fetchedData.length == 0 ? setEmptyData(true) : setEmptyData(false);
     });
   }, [tech]);
   useEffect(() => {
@@ -110,17 +108,17 @@ export default function Project({ tech, searchQuery, setSearchQuery }) {
         <div className="container description-container">
           {tech ? (
             <h1 className=" heading text-center py-5" id="project">
-              Projects on the technology{" "}
+              Projects based on{" "}
               <span className="custom-txt">{tech}</span>
             </h1>
           ) : (
             ""
           )}
-          <div className="row justify-content-around">
+          <div className="row justify-content-around px-sm-0 px-1">
             {project.map((el, index) => {
               return (
                 <Fragment key={el.id}>
-                  <div className="col-md-5 border  mb-3 py-3 text-center">
+                  <div className="col-md-5 border mb-2 py-3 text-center">
                     <h3>{el.data.projectTitle}</h3>
                     <p className="description">
                       <b>Details: </b>
@@ -284,27 +282,32 @@ function ProjectSidebar({ project, sidebar, setSidebar, index }) {
                         Apply
                       </button>
                     </div>
-                    <div className="container">
                     <h2 className="description-heading">Your bid history</h2>
+                    <div className="container">
+                    {userBids.length!==0?(
                       <table className="table text-center table-striped">
-                        <thead>
-                          <tr>
-                            <th>Bid Amount</th>
-                            <th>Applied on</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {
-                          userBids.map((el) => {
-                            return (
-                              <tr key={el.id}>
-                                <td>{el.data.bidAmount}</td>
-                                <td>{formatDate(el.data.createdAt)}</td>
-                              </tr> 
-                            );
-                          })}
-                        </tbody>
-                      </table>
+                      <thead>
+                        <tr>
+                          <th>Bid Amount</th>
+                          <th>Applied on</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {
+                        userBids.map((el) => {
+                          return (
+                            <tr key={el.id}>
+                              <td>{el.data.bidAmount}</td>
+                              <td>{formatDate(el.data.createdAt)}</td>
+                            </tr> 
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                    ):(
+                      <p className="fs-5">No bids found</p>
+                    )}
+                      
                     </div>
                   </>
                 ) : (

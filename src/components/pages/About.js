@@ -10,12 +10,12 @@ export default function About() {
   }
   return (
     <>
-      <div className="container text-center fs-4">
+      <div className="container text-center fs-5">
         <h1 className="py-5 heading">
           About the <span className="custom-txt">company</span>
         </h1>
-        <div className="img d-none d-lg-block">
-          <img src="/assets/img/teamwork.png" />
+        <div className="d-none d-lg-block" style={{height:"70vh",width:"100%"}}>
+          <img src="/assets/img/teamwork.png" className="h-100" />
         </div>
         <div className="text-start my-5 about-text">
             <h1 className="py-5">What we do</h1>
@@ -71,9 +71,9 @@ export default function About() {
             </li>
           </ul>
         </div>
-        <h1 className="heading py-5">Subscribe to <span className="custom-txt">our newsletter</span></h1>
-        <Newsletter/>
       </div>
+        <h1 className="heading py-5 text-center">Subscribe to <span className="custom-txt">our newsletter</span></h1>
+        <Newsletter/>
     </>
   );
 }
