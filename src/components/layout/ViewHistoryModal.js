@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { db } from "../../Firebase";
 
-export default function ViewHistoryModal({ bids }) {
+export default function ViewHistoryModal({ bids,clr }) {
   const [show, setShow] = useState(0);
   const [projectInfo, setProjectInfo] = useState({});
   const [q, setq] = useState("");
@@ -26,12 +26,12 @@ export default function ViewHistoryModal({ bids }) {
       console.log("No such document!");
     }
   };
-  let qualifications = q.split(",");
-  let contact = c.split(",");
+  let qualifications = q.split("$");
+  let contact = c.split("$");
 
   return (
     <>
-      <button className="btn custom-btn" onClick={handleShow}>
+      <button className={clr?"btn btn-primary":"btn custom-btn"} onClick={handleShow}>
         View Details
       </button>
 

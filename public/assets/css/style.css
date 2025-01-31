@@ -59,12 +59,26 @@ html{
   width: 20px;
 }
 .carousel a {
-  background-color: #92d35e !important;
+  background-color: #92d35e;
   opacity: 1;
   height: 50px;
   width: 50px;
   border-radius: 50%;
   margin: auto 30px;
+}
+@media screen and (max-width: 375px) {
+  .carousel a img {
+    background-color: #92d35e !important;
+    width: 12px;
+  }
+  .carousel a {
+    background-color: #92d35e;
+    opacity: 1;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin: auto 2px;
+  }
 }
 .service-img {
   width: 80px;

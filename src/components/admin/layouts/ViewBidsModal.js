@@ -134,7 +134,7 @@ export default function ViewBidsModal({ project }) {
                               </button>
                             </li>
                             <li>
-                              <Link className="btn w-100 text-start" to={`/profile/${el.data.userId}`}>
+                              <Link className="btn w-100 text-start" to={`/admin/viewprofile/${el.data.userId}`}>
                                 View Profile
                               </Link>
                             </li>

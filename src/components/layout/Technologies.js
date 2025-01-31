@@ -108,14 +108,14 @@ export default function Technologies() {
           })}
           
         </div>
-        <div className={windowSize < 770 ? "d-none" : "container"}>
+        <div className = "container">
           <a
             className="carousel-control-prev"
             type="button"
             data-bs-target="#carouselExample"
             data-bs-slide="prev"
           >
-            <img src="/assets/img/icon/prew-arrow.svg" alt="" />
+            <img src="/assets/img/icon/prew-arrow.svg" alt=""/>
           </a>
           <a
             className="carousel-control-next"
@@ -123,7 +123,7 @@ export default function Technologies() {
             data-bs-target="#carouselExample"
             data-bs-slide="next"
           >
-            <img src="/assets/img/icon/next-arrow.svg" alt="" />
+            <img src="/assets/img/icon/next-arrow.svg" alt=""/>
           </a>
         </div>
       </div>

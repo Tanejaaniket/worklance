@@ -4,9 +4,9 @@ import { Button, Form, Modal } from "react-bootstrap";
 export default function ViewProjectDetailsModal({ project }) {
   const [show, setShow] = useState(0);
   let qualifications = project.data.qualifications;
-  qualifications = qualifications.split(",");
+  qualifications = qualifications.split("$");
   let clientDetails = project.data.clientDetails;
-  clientDetails = clientDetails.split(",");
+  clientDetails = clientDetails.split("$");
     
   const handleClose = () => setShow(0);
   const handleShow = () => setShow(1);

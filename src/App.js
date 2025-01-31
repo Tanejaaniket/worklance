@@ -21,6 +21,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import History from './components/pages/History';
 import Error from './components/pages/Error';
+import UserProfileView from './components/admin/UserProfileView';
+import UserHistoryView from './components/admin/UserHistoryView';
 
 
 function App() {
@@ -33,7 +35,7 @@ function App() {
             <Route path="/contact" element={<Contact/>} />
             <Route path="/about" element={<About/>} />
             <Route path="/profile/:id" element={<Profile/>}/>
-            <Route path='/history/:status' element={<History/>}/>
+            <Route path='/history/:id/:status' element={<History/>}/>
           </Route>
           <Route path='/admin' element={<MasterAdmin/>}>
             <Route path="/admin" element={<AdminHome/>} />
@@ -42,6 +44,8 @@ function App() {
             <Route path="/admin/managetechnology" element={<ManageTechnology/>} />
             <Route path="/admin/manageproject" element={<ManageProject/>} />
             <Route path="/admin/enquiries" element={<ManageEnquiry/>} />
+            <Route path="/admin/viewprofile/:id" element={<UserProfileView/>}/>
+            <Route path='/admin/history/:id/:status' element={<UserHistoryView/>}/>
           </Route>
           <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<Register/>} /> 

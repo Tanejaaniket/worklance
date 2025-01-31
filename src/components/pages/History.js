@@ -3,20 +3,17 @@ import ViewHistoryModal from "../layout/ViewHistoryModal";
 import {
   collection,
   onSnapshot,
-
   query,
-
   where,
 } from "firebase/firestore";
 import { db } from "../../Firebase";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
 
 export default function History() {
   const [project, setProject] = useState([]);
   const [load, setLoad] = useState(true);
-  const { status } = useParams();
-  const id = sessionStorage.getItem("id");
+  const { status,id } = useParams();
   useEffect(() => {
     const q = query(
       collection(db, "bids"),
@@ -57,6 +54,16 @@ export default function History() {
   }
   return (
     <>
+          <div className="row mt-3 ">
+        <div className="col ps-sm-5 ps-3">
+          <Link
+            className="btn me-auto custom-btn "
+            to={`/profile/${id}`}
+          >
+            <i className="bi bi-arrow-left"></i>
+          </Link>
+        </div>
+      </div>
       <div className="p-sm-5 p-2 pt-3">
         <h1 className="text-center">
           Hist<span className="custom-txt">ory</span>

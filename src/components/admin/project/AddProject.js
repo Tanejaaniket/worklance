@@ -181,7 +181,7 @@ export default function AddProject() {
                 <div className="col-sm-8">
                   <textarea
                     className="form-control"
-                    placeholder="Preferd Qualifications (Seprated with , )"
+                    placeholder="Preferd Qualifications (Seprated with $ )"
                     value={preferedQualifications}
                     onChange={(e) => {
                       setpreferedQualification(e.target.value);
@@ -194,7 +194,7 @@ export default function AddProject() {
                 <div className="col-sm-8">
                   <textarea
                     className="form-control"
-                    placeholder="Client details (Seprated with , )"
+                    placeholder="Client details (Seprated with $ )"
                     value={clientDetails}
                     onChange={(e) => {
                       setClientDetails(e.target.value);

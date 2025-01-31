@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import {
   collection,
   doc,
@@ -117,7 +117,7 @@ export default function Profile() {
           () => {
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
               setURL(downloadURL);
-              saveCredential();
+              //saveCredential();
             });
           }
         );
@@ -140,7 +140,7 @@ export default function Profile() {
   const saveCredential = async () => {
     try {
       let data;
-      if(url){
+      if (url) {
         data = {
           ...user,
           contact,
@@ -148,9 +148,9 @@ export default function Profile() {
           email,
           userName,
           about,
-          url
+          url,
         };
-      }else{
+      } else {
         data = {
           ...user,
           contact,
@@ -159,7 +159,7 @@ export default function Profile() {
           userName,
           about,
         };
-      }     
+      }
       await updateDoc(doc(db, "users", id), data);
       toast.success("Profile updated successfully");
       sessionStorage.setItem("name", userName);
@@ -170,7 +170,7 @@ export default function Profile() {
     } catch (err) {
       toast.error("Cannot save data");
       console.log(err);
-    }finally{
+    } finally {
       setTimeout(() => {
         setLoad(false);
       }, 1000);
@@ -202,6 +202,9 @@ export default function Profile() {
         {status != "editting" ? (
           <div className="row mt-3">
             <div className="col">
+              <Link className="btn me-auto custom-btn mb-3" to={`/`}>
+                <i className="bi bi-arrow-left"></i>
+              </Link>
               <button
                 className="btn d-block me-auto custom-btn "
                 onClick={editData}
@@ -356,7 +359,7 @@ export default function Profile() {
                       <button
                         className="btn custom-btn"
                         onClick={() => {
-                          nav(`/history/${1}`);
+                          nav(`/history/${id}/${1}`);
                         }}
                       >
                         View Details
@@ -372,7 +375,7 @@ export default function Profile() {
                       <button
                         className="btn custom-btn"
                         onClick={() => {
-                          nav(`/history/${2}`);
+                          nav(`/history/${id}/${2}`);
                         }}
                       >
                         View Details
